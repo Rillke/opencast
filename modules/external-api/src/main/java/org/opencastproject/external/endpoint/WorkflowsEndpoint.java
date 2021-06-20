@@ -321,7 +321,7 @@ public class WorkflowsEndpoint {
   @RestQuery(name = "createworkflowinstance", description = "Creates a workflow instance.", returnDescription = "", restParameters = {
           @RestParameter(name = "event_identifier", description = "The event identifier this workflow should run against", isRequired = true, type = STRING),
           @RestParameter(name = "workflow_definition_identifier", description = "The identifier of the workflow definition to use", isRequired = true, type = STRING),
-          @RestParameter(name = "configuration", description = "The optional configuration for this workflow", isRequired = false, type = STRING),
+          @RestParameter(name = "configuration", description = "The optional JSON formatted configuration for this workflow", isRequired = false, type = STRING),
           @RestParameter(name = "withoperations", description = "Whether the workflow operations should be included in the response", isRequired = false, type = BOOLEAN),
           @RestParameter(name = "withconfiguration", description = "Whether the workflow configuration should be included in the response", isRequired = false, type = BOOLEAN), }, responses = {
           @RestResponse(description = "A new workflow is created and its identifier is returned in the Location header.", responseCode = HttpServletResponse.SC_CREATED),
@@ -411,7 +411,7 @@ public class WorkflowsEndpoint {
   @Path("{workflowInstanceId}")
   @RestQuery(name = "updateworkflowinstance", description = "Creates a workflow instance.", returnDescription = "", pathParameters = {
           @RestParameter(name = "workflowInstanceId", description = "The workflow instance id", isRequired = true, type = INTEGER) }, restParameters = {
-          @RestParameter(name = "configuration", description = "The optional configuration for this workflow", isRequired = false, type = STRING),
+          @RestParameter(name = "configuration", description = "The optional JSON formatted configuration for this workflow", isRequired = false, type = STRING),
           @RestParameter(name = "state", description = "The optional state transition for this workflow", isRequired = false, type = STRING),
           @RestParameter(name = "withoperations", description = "Whether the workflow operations should be included in the response", isRequired = false, type = BOOLEAN),
           @RestParameter(name = "withconfiguration", description = "Whether the workflow configuration should be included in the response", isRequired = false, type = BOOLEAN), }, responses = {
